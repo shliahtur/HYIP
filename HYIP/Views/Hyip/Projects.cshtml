@@ -1,0 +1,92 @@
+﻿@model HYIP.Models.HyipViewModel
+@using HYIP.Controllers
+@using HYIP.Models
+@{
+    ViewBag.Title = "Projects";
+    int postnum = 0;
+}
+
+
+    <div class="container-fluid backgroundcolor">
+
+        <section class="container">
+            <div class="row col-lg-12 text-center" id="bannertop"><a href="#"><img src="" alt="ad" width="730px" height="90px"></a>	</div>
+            <div class="row col-lg-12">
+
+                <section class="col-lg-7 col-md-6 col-md-push-2 col-sm-12 col-xs-12" id="sites">
+                    <article id="item">
+                         @foreach (var project in Model.PagedHyipViewModel)
+                         {
+                             postnum++;
+                        <table>
+                            <tr>
+                                <th colspan="5">
+                                    <ul>
+                                        <li>@project.Name</li>
+                                        
+                        <li class="stars">
+                            <div class="rating">
+                                <input type="radio" style="display: none;" name="star" id="star1" checked="checked" />
+                                <label for="star1"><div class="star"></div></label>
+                                <input type="radio" style="display: none;" name="star" id="star2" />
+                                <label for="star2"><div class="star"></div></label>
+                                <input type="radio" style="display: none;" name="star" id="star3" />
+                                <label for="star3"><div class="star"></div></label>
+                                <input type="radio" style="display: none;" name="star" id="star4" />
+                                <label for="star4"><div class="star"></div></label>
+                                <input type="radio" style="display: none;" name="star" id="star5" />
+                                <label for="star5">
+                                    <div class="star"></div>
+                                </label>
+                            </div>
+                        </li>
+                        <li class="estimate"><a href="feedback.html">оценить</a></li>
+                        <div class="date">date</div>
+                        </ul>
+
+                        </th>
+
+                        </tr>
+
+
+
+                        <tr class="border"></tr>
+                        <tr>
+                            <td rowspan="6" class="pic" colspan="2">
+                                <a href="#" target="_blank" title="Перейти на сайт проекта">
+                                    <img width="180" height="135" src=@project.PicLink />
+                                </a>
+                                <center></center>
+                            </td>
+                            <td class="characteristic">Домен</td>
+                            <td class="description">@project.Domain</td>
+                        </tr>
+                        <tr>
+                            <td class="characteristic">Хостинг</td>
+                            <td class="description">@project.Hosting</td>
+                        </tr>
+                        <tr>
+                            <td class="characteristic">SSl</td>
+                            <td class="description">@project.SSL</td>
+                        </tr>
+                        <tr>
+                            <td class="characteristic">Скрипт</td>
+                            <td class="description">@project.SSL</td>
+                        </tr>
+                        <tr>
+                            <td class="characteristic">Дизайн</td>
+                            <td class="description">@project.Design</td>
+
+                        </tr>
+                        <tr>
+                            <td class="characteristic">Форумы</td>
+                            <td class="description links"><a href="#">@project.Forums</a></td>
+                        </tr>
+                        <tr>
+                            <td class="more"><a href="statistics.html"> подробнее</a></td>
+                        </tr>
+                           
+                        </table>
+                         }
+                    </article>
+                

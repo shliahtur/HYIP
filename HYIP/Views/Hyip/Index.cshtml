@@ -1,0 +1,10 @@
+﻿@model HYIP.Models.HyipViewModel
+@using HYIP.Controllers
+@using HYIP.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{Html.RenderPartial("Projects", Model);}
+
